@@ -1,0 +1,270 @@
+/* App.css */
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background: linear-gradient(180deg, #4d6e45 0%, #8d7552 100%);
+  background-attachment: fixed;
+  color: #333;
+}
+
+.container {
+  max-width: 800px; /* הקטנת הרוחב */
+  padding: 2rem;
+  margin: 0 auto; /* מרכז את הקונטיינר */
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 1.5rem; /* ריווח תחתון לכותרת */
+}
+
+.mb-2 {
+  margin-bottom: 1rem; /* ריווח קטן יותר בין שדות הקלט */
+}
+
+.mb-3 {
+  margin-bottom: 1.5rem; /* ריווח גדול יותר בין אזורים שונים */
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem; /* מרווח בין הכפתורים */
+  justify-content: center;
+}
+
+.add-button {
+  background-color: #4CAF50; /* צבע ירוק נעים */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.add-button:hover {
+  background-color: #45a049; /* צבע כהה יותר ב-hover */
+  transform: scale(1.05); /* הגדלה קלה */
+}
+
+.filter-sort-button {
+  background-color: #007bff; /* צבע כחול עבור כפתורי הפעולות */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+}
+
+.filter-sort-button:hover {
+  background-color: #0056b3; /* גוון כהה יותר ב-hover */
+  transform: scale(1.05); /* הגדלה קלה */
+}
+
+/* תפריט בחירה (dropdown) לסינון */
+.filter-dropdown {
+  background-color: #f8f9fa; /* רקע בהיר */
+  padding: 0.5rem;
+  border-radius: 6px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ced4da;
+  font-weight: bold;
+  color: #495057;
+}
+
+/* מבנה רשת (Grid) לכרטיסי המנה */
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* עיצוב כרטיס המנה */
+.dish-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dish-card:hover {
+  transform: scale(1.02); /* הגדלה קלה ב-hover */
+}
+
+/* תמונת מנה */
+.dish-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.dish-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* תוכן הכרטיס */
+.dish-content {
+  text-align: center;
+}
+
+.dish-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+
+.dish-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.dish-category {
+  font-size: 0.9rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.button-group button {
+  margin-right: 0.5rem;
+}
+
+/* תאריך הוספה */
+.dish-date {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 0.5rem;
+}
+
+.chosen-dish-card {
+  background-color: #f8f9fa; /* רקע בהיר */
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.chosen-dish-card h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.chosen-dish-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 1rem auto;
+}
+
+.chosen-dish-description {
+  font-size: 1rem;
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.chosen-dish-date {
+  font-size: 0.85rem;
+  color: #999;
+  margin-top: 0.5rem;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15); /* צל קל */
+  transition: transform 0.2s ease; /* אנימציה ל-hover */
+}
+
+.main-title:hover {
+  transform: scale(1.05); /* הגדלה קלה ב-hover */
+}
+
+.filter-sort-button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* ריווח בין האייקון לטקסט */
+}
+
+.filter-sort-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.random-dish-button {
+  background-color: #2a9d8f;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.random-dish-button:hover {
+  background-color: #21867a;
+}
+
+.badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.badge-salad {
+  background-color: #28a745; /* ירוק לסלטים */
+}
+
+.badge-pasta {
+  background-color: #ffc107; /* צהוב לפסטות */
+}
+
+.badge-meat {
+  background-color: #dc3545; /* אדום לבשר */
+}
+
+.badge-dessert {
+  background-color: #6f42c1; /* סגול לקינוחים */
+}
