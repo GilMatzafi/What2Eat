@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((error) => console.error('Error connecting to MongoDB:', error));
 
 // חיבור מסלול המנות
-const dishesRouter = require(__dirname + '/dishes');
+const dishesRouter = require(__dirname + '/routes/dishes');
 app.use('/api/dishes', dishesRouter);
 
 // התחל את השרת

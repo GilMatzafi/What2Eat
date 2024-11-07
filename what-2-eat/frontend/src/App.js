@@ -1,5 +1,5 @@
 // App.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AddDish from './Components/AddDish';
 import RandomDishButton from './Components/RandomDishButton';
 import FilterSort from './Components/FilterSort';
@@ -14,6 +14,24 @@ const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortOption, setSortOption] = useState('name');
   const [selectedCategory, setSelectedCategory] = useState('');
+
+    // הורדת כל המנות מה-Database בזמן טעינת הדף
+    useEffect(() => {
+      const fetchDishes = async () => {
+        try {
+          const response = await fetch('http://localhost:5001/api/dishes'); // כתובת ה-API
+          if (!response.ok) {
+            throw new Error('Failed to fetch dishes');
+          }
+          const data = await response.json();
+          setDishes(data); // שמירת המנות ב-state
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      };
+  
+      fetchDishes();
+    }, []); // התלות הריקה [] מבטיחה שהבקשה תרוץ רק פעם אחת
 
   const addDish = (newDish) => {
     setDishes([...dishes, { ...newDish, addedAt: new Date(), rating: 0 }]);

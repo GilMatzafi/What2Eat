@@ -29,18 +29,40 @@ const AddDish = ({ onAddDish }) => {
     setCategory(e.target.value);
   };
 
-  const handleAddDish = () => {
+  const handleAddDish = async () => {
     if (dish.trim() !== '') {
-      onAddDish({ name: dish, image, description, category }); // Add category to dish object
-      setDish('');
-      setImage(null);
-      setDescription('');
-      setCategory('');
-    }
-    else {
+      const newDish = { name: dish, image, description, category };
+      
+      try {
+        const response = await fetch('http://localhost:5001/api/dishes', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newDish),
+        });
+  
+        if (!response.ok) {
+          throw new Error('Failed to add dish');
+        }
+  
+        const addedDish = await response.json();
+        onAddDish(addedDish); // להוסיף את המנה לרשימת המנות ב-Frontend
+  
+        // נקה את השדות לאחר הוספה מוצלחת
+        setDish('');
+        setImage(null);
+        setDescription('');
+        setCategory('');
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to add dish. Please try again.');
+      }
+    } else {
       alert('Please enter a dish name.');
     }
   };
+  
 
   return (
     <div className="mb-3">

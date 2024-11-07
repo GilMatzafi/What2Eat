@@ -14,19 +14,12 @@ router.get('/', async (req, res) => {
 
 // מסלול להוספת מנה חדשה
 router.post('/', async (req, res) => {
-  const dish = new Dish({
-    name: req.body.name,
-    image: req.body.image,
-    description: req.body.description,
-    category: req.body.category,
-    rating: req.body.rating,
-  });
-
   try {
-    const newDish = await dish.save();
-    res.status(201).json(newDish);
+    const newDish = new Dish(req.body); // יצירת מסמך חדש מהנתונים
+    await newDish.save(); // שמירה ב-Database
+    res.status(201).json(newDish); // החזרת המנה שנוספה
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(500).json({ message: 'Error adding dish' });
   }
 });
 
