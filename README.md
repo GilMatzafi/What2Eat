@@ -1,0 +1,1 @@
+"An app that helps you decide what to eat today with personalized meal suggestions and a variety of daily food ideas. Never wonder what's for dinner again!"
