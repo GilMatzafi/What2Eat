@@ -1,6 +1,6 @@
 # 🍽️ What to Eat Today?
 
-<img src="./2.png" alt="What to Eat Today Logo" width="100" height="100">
+<img src="./assets/2.png" alt="What to Eat Today Logo" width="100" height="100">
 
 
 ### ScreenShots
