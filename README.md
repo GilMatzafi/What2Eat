@@ -3,6 +3,23 @@
 <img src="./2.png" alt="What to Eat Today Logo" width="100" height="100">
 
 
+### ScreenShots
+1. **Initial screen:**
+![Initial screen](assets/1.png)
+
+2. **Adding Meal: starting adding our delicious pizza !**
+![second screen](assets/3.png)
+
+3. **Dishes List**
+![Dishes list](assets/4.png)
+
+4. **Sort By Name: lets sort by name our meals !**
+![Sort By Name](assets/5.png)
+
+5. **Lets Random What we are going to eat !**
+![Random](assets/6.png)
+
+
 **What to Eat Today?** is a full-stack web application that helps users decide what to eat by randomly selecting a dish from a user-generated list. Users can add, edit, and delete dishes, view them with descriptions and images, and filter or sort based on various criteria.
 
 ---
